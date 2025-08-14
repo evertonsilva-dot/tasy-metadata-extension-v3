@@ -20,7 +20,6 @@
     "service_worker": "background.js"
   },
   "options_ui": {
-    "chrome_style": true,
     "open_in_tab": false,
     "page": "options.html"
   },
