@@ -1,0 +1,51 @@
+{
+  "name": "Tasy Metadata Extension",
+  "description": "Chrome extension to present tasy metadata information",
+	"version": "1.4",
+  "manifest_version": 2,
+  "icons": {
+    "128": "icon256.png"
+  },
+	"permissions": [
+    "activeTab",
+    "alarms",
+    "declarativeContent",
+		"storage",
+    "tabs",
+    "http://*/",
+    "https://*/"
+	],
+	"background": {
+		"scripts": [
+			"background.js"
+		],
+		"persistent": false
+  },
+  "options_ui": {
+    "chrome_style": true,
+    "open_in_tab": false,
+    "page": "options.html"
+  },
+	"page_action": {
+		"default_title": "Tasy Extension",
+		"default_popup": "popup.html"
+	},
+	"content_scripts": [{
+    "matches": [
+      "http://*/*",
+      "https://*/*"
+    ],
+    "exclude_globs": [
+      "/^.*:\/\/localhost(?!:3000\/.*$)(:.*)?\/.*$/"
+    ],
+    "js": [
+      "content.js"
+    ],
+    "css": [
+      "injected.css"
+    ]
+  }],
+	"web_accessible_resources": [
+    "injected.js"
+	]
+}

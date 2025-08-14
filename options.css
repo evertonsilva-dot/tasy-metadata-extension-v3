@@ -1,0 +1,22 @@
+label {
+  display: block;
+  padding: 4px 0;
+}
+
+input[type="text"],
+textarea,
+select {
+  width: 100%;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+}
+
+button {
+  margin-top: 20px;
+}
+
+.section {
+  margin-bottom: 20px;
+}

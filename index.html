@@ -1,0 +1,184 @@
+
+    <!DOCTYPE html>
+    <html>
+      <head>
+        <title>Tasy Metadata Extension</title>
+        <meta charset="UTF-8">
+        <style>
+          html,
+          body {
+            margin: 0;
+            padding: 0;
+          }
+
+          body {
+            background-color: #f1f1f1;
+            color: #555;
+            font-family: sans-serif;
+            font-size: 16px;
+            line-height: 1.5;
+          }
+
+          table {
+            width: 100%;
+            border-collapse: collapse;
+          }
+
+          table,
+          th,
+          td {
+            border: 1px solid #ccc;
+          }
+
+          th,
+          td {
+            padding: .5em;
+          }
+
+          tr:nth-child(even) {
+            background-color: #f1f1f1;
+          }
+
+          code,
+          pre {
+            background-color: #f1f1f1;
+          }
+
+          #page {
+            margin: 0 auto;
+            padding: 20px 50px;
+            max-width: 1000px;
+            background-color: #fff;
+          }
+        </style>
+      </head>
+      <body>
+        <div id="page">
+          <h1 id="tasy-metadata-extension">Tasy Metadata Extension</h1>
+<p>Chrome Extension to present Tasy metadata information.</p>
+<p><img src="docs/use-case-1.gif" alt="Tasy Metadata Extension"></p>
+<h2 id="features">Features</h2>
+<ul>
+<li>Displays the attribute and value of the fields.</li>
+<li>Displays the attribute of each column in the grid.</li>
+<li>Displays the panel details like code, view and table.</li>
+<li>Allows to copy attribute name, schematics code, view code, etc, when clicked.</li>
+<li>Displays recent features opened for quick access.</li>
+<li>The mouse over a recent feature displays on the tooltip the code and name of
+that feature.</li>
+<li>The extension updates the name of the recent features according to the
+user&#39;s current language. So, you can change it, log in again and see the
+translation.</li>
+<li>Reload stylesheets without reload the whole page.</li>
+<li>On popup, displays the WHEBDC network IP.</li>
+</ul>
+<p><img src="docs/use-case-2.gif" alt="Recent features"></p>
+<p><strong>Inspect mode</strong></p>
+<p>The inspect mode is a powerful tool to discovery some aspects of any component
+in the page, inspecting anything e taking information about:</p>
+<table>
+<tbody>
+<tr>
+<td>Feature</td>
+<td>The code and the name of the current feature.</td>
+</tr>
+<tr>
+<td>Element</td>
+<td>See the inspected element HTML, allowing to see the source image of a <code>&lt;img&gt;</code>, the code attribute of buttons and more.</td>
+</tr>
+<tr>
+<td>Panel</td>
+<td>Properties like code, view, table, object type, action name and more.</td>
+</tr>
+<tr>
+<td>Popup menus</td>
+<td>See the code of each menu component in the inspected panel.</td>
+</tr>
+<tr>
+<td>Popup items</td>
+<td>See the items three in the inspected popup menu.</td>
+</tr>
+<tr>
+<td>Popup single item</td>
+<td>Details of inspected item in the popup menu.</td>
+</tr>
+<tr>
+<td>Filter configurator</td>
+<td>Details of the filter.</td>
+</tr>
+<tr>
+<td>Attributes</td>
+<td>List of all attributes in the panel (for dbpanel).</td>
+</tr>
+<tr>
+<td>Meta attributes and<br>Meta columns</td>
+<td>Detailed list of attributes and columns in the panel.</td>
+</tr>
+<tr>
+<td>Attribute</td>
+<td>The name, value, type, table, options (for radio buttons) and more, when<br>
+inspecting an attribute like a locator, listbox or even a simple text input.</td>
+</tr>
+<tr>
+<td>Attribute options</td>
+<td>List with the code and description of each option available for selecting<br>
+in that attribute (for listbox).</td>
+</tr>
+<tr>
+<td>Tabs</td>
+<td>The code and the name of each tab in the panel.</td>
+</tr>
+<tr>
+<td>Calendar</td>
+<td>Displays its action, date, type and parentDtoObject of the inspected<br>
+calendar component.</td>
+</tr>
+</tbody>
+</table>
+
+
+<p><img src="docs/use-case-3.gif" alt="Inspect mode"></p>
+<h2 id="install">Install</h2>
+<ol>
+<li><p>Choose an option below to get the extension files:</p>
+<ul>
+<li><a href="https://github.com/philips-emr/tasy-metadata-extension/archive/main.zip">Download ZIP</a>, or</li>
+<li><code>\\whebs05\Tecnico\Programas\Instalador oficial HTML5\tasy-metadata-extension\tasy-metadata-extension.zip</code></li>
+</ul>
+</li>
+<li><p>Open this page on Chrome: <strong>chrome://extensions</strong></p>
+</li>
+<li><p>Select <strong>Developer mode</strong>.</p>
+</li>
+<li><p>Click in the <strong>Load unpacked</strong> button.</p>
+</li>
+<li><p>Select <strong>dist</strong> folder inside extension&#39;s folder.</p>
+</li>
+<li><p>Pin the extension on toolbar, it&#39;s easier to access.</p>
+</li>
+</ol>
+<p><em>Obs: to enable the extension in incognito mode, open <strong>chrome://extensions</strong>,
+go to <strong>Details</strong> on extension and check <strong>Allow in incognito</strong>.</em></p>
+<h2 id="updating">Updating</h2>
+<p>To update the extension you must download the latest version following the
+<strong>Install</strong> instructions above, then extract the files to the same folder
+overriding old files, then refresh the extension on Chrome&#39;s extensions page.</p>
+<h2 id="usage">Usage</h2>
+<p>In a page from Tasy domain or localhost:3000, log in, open any feature and
+click in the extension icon on toolbar to select an option and see the effects.</p>
+<p>You can configure in what hosts the extension should be available, to do that
+you can right click in the extension icon on toolbar, go to &quot;Options&quot; and add a
+newline with the host that you want. After change the list click in the &quot;Save&quot;
+button and reload the page.</p>
+<p><img src="docs/use-case-4.gif" alt="Extension Options Page"></p>
+<h2 id="change-log">Change Log</h2>
+<p>All notable changes to this project will be documented in this file.</p>
+<p><a href="CHANGELOG.md">Change Log</a></p>
+<h2 id="contributors">Contributors</h2>
+<ul>
+<li>Anderson Samir Corrêa Paz de Camargo (<a href="https://github.com/ascpcamargo">ascpcamargo</a>)</li>
+</ul>
+
+        </div>
+      </body>
+    </html>
