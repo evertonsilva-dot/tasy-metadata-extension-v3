@@ -1,42 +1,40 @@
 {
   "name": "Tasy Metadata Extension",
   "description": "Chrome extension to present tasy metadata information",
-	"version": "1.4",
-  "manifest_version": 2,
+  "version": "3.0",
+  "manifest_version": 3,
   "icons": {
     "128": "icon256.png"
   },
-	"permissions": [
-    "activeTab",
+  "permissions": [
+    "storage",
+    "scripting",
     "alarms",
-    "declarativeContent",
-		"storage",
-    "tabs",
-    "http://*/",
-    "https://*/"
-	],
-	"background": {
-		"scripts": [
-			"background.js"
-		],
-		"persistent": false
+    "activeTab"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
   },
   "options_ui": {
     "chrome_style": true,
     "open_in_tab": false,
     "page": "options.html"
   },
-	"page_action": {
-		"default_title": "Tasy Extension",
-		"default_popup": "popup.html"
-	},
-	"content_scripts": [{
+  "action": {
+    "default_title": "Tasy Extension",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [{
     "matches": [
       "http://*/*",
       "https://*/*"
     ],
-    "exclude_globs": [
-      "/^.*:\/\/localhost(?!:3000\/.*$)(:.*)?\/.*$/"
+    "exclude_matches": [
+      "*://localhost/*"
     ],
     "js": [
       "content.js"
@@ -45,7 +43,10 @@
       "injected.css"
     ]
   }],
-	"web_accessible_resources": [
-    "injected.js"
-	]
+  "web_accessible_resources": [
+    {
+      "resources": [ "injected.js" ],
+      "matches": [ "<all_urls>" ]
+    }
+  ]
 }
